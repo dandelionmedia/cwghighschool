@@ -27,10 +27,35 @@
 .review-studio h2{margin:12px 0 7px;font-size:clamp(23px,3vw,31px);letter-spacing:-.8px}.review-studio .review-desc{font-size:16px;color:#586f83;line-height:1.8;margin:0 0 22px}
 .review-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.review-field{min-width:0;display:flex;flex-direction:column;gap:9px}.review-field label{font-weight:900;color:#244760;font-size:16px}.review-field select,.review-field input,.review-field textarea{width:100%;background:#fff;border:1px solid #c9dce7;border-radius:12px;min-height:52px;padding:12px 14px;font:inherit;color:#153c58}.review-field textarea{min-height:95px;resize:vertical}.review-field select:focus,.review-field input:focus,.review-field textarea:focus{outline:3px solid #bbe9e7;outline-offset:1px;border-color:#25a797}.review-field.full{grid-column:1/-1}.review-choices{display:flex;flex-wrap:wrap;gap:8px}.review-chip{border:1px solid #bed5df;background:#fff;border-radius:999px;padding:9px 14px;color:#35556e;font-size:14px;font-weight:800;transition:.15s}.review-chip[aria-pressed="true"]{background:#116b78;border-color:#116b78;color:#fff;box-shadow:0 4px 0 #0b4a53}.review-chip:focus-visible{outline:3px solid #4aa7f5;outline-offset:3px}.review-summary{background:#fff;border:1px solid #d2e4ed;border-radius:17px;margin-top:23px;padding:21px 22px}.review-summary strong{display:block;color:#1b5468;margin-bottom:7px;font-size:17px}.review-result{white-space:pre-wrap;line-height:1.95;color:#23445d;font-size:17px;min-height:100px}.review-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:16px}.review-note{font-size:13px;color:#6a7b8b}.review-reset{border:1px solid #c8dce6;border-radius:11px;background:#fff;padding:11px 16px;font-weight:800;color:#35586b}.review-copy{min-width:150px}.review-studio p.review-disclaimer{font-size:13px;color:#637b8a;margin:16px 0 0}
 @media(max-width:760px){.review-fields{grid-template-columns:1fr}.review-studio{padding:21px 17px}.review-chip{font-size:13px}.review-result{font-size:16px}}
+
+/* 모바일/태블릿: 본문 폭을 바꾸지 않는 접이식 왼쪽 목차 */
+.mobile-toc-toggle,.mobile-toc-panel,.mobile-toc-scrim{display:none}
+@media(max-width:1099px){
+  .mobile-toc-toggle{display:flex;align-items:center;justify-content:center;position:fixed;z-index:51;left:0;top:115px;width:47px;height:53px;border:1px solid #a6d5d6;border-left:0;border-radius:0 15px 15px 0;background:linear-gradient(155deg,#123f65,#157c8a);color:#fff;box-shadow:0 7px 20px #0c365251;font-size:25px;line-height:1;transition:transform .2s}
+  .mobile-toc-toggle:active{transform:scale(.95)}
+  .mobile-toc-panel{display:flex;flex-direction:column;position:fixed;z-index:53;left:0;top:0;bottom:0;width:min(335px,85vw);max-width:335px;background:#fff;border-right:1px solid #d4e3ec;box-shadow:12px 0 40px #092b4660;transform:translateX(-105%);visibility:hidden;transition:transform .22s ease,visibility .22s;overscroll-behavior:contain}
+  .mobile-toc-panel.open{transform:translateX(0);visibility:visible}
+  .mobile-toc-header{display:flex;align-items:center;justify-content:space-between;padding:20px 19px;border-bottom:1px solid #dce7ef;color:#102b4b;font-weight:900;font-size:20px;gap:12px}
+  .mobile-toc-close{display:grid;place-items:center;width:43px;height:43px;flex:0 0 auto;border:1px solid #d7e5eb;border-radius:11px;background:#f3f8fb;font-size:24px;color:#183e5c}
+  .mobile-toc-list{display:flex;flex-direction:column;overflow-y:auto;gap:6px;padding:15px;min-height:0}
+  .mobile-toc-list a{display:block;padding:13px 12px;border-radius:12px;font-size:16px;font-weight:800;line-height:1.5;color:#284b67}
+  .mobile-toc-list a:hover,.mobile-toc-list a:focus-visible,.mobile-toc-list a.active{background:#e4f4f1;color:#086e67}
+  .mobile-toc-scrim{display:block;position:fixed;z-index:52;inset:0;background:#071f357a;opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s}
+  .mobile-toc-scrim.open{opacity:1;visibility:visible}
+  body.mobile-toc-open{overflow:hidden}
+}
+@media(max-width:520px){.mobile-toc-toggle{top:98px;width:42px;height:48px;font-size:23px}}
+@media(min-width:1100px){.mobile-toc-toggle,.mobile-toc-panel,.mobile-toc-scrim{display:none!important}}
 </style><style>
 .rating-field{padding:14px 0 4px}.rating-title{font-weight:800;font-size:17px;margin-bottom:9px}.rating-title small{font-size:13px;color:#617c91;font-weight:500}.star-widget{display:flex;align-items:center;flex-wrap:wrap;gap:5px}.star-widget button{border:0;border-radius:9px;background:transparent;color:#bfccd8;line-height:1;padding:5px;font-size:clamp(30px,4vw,42px);text-shadow:0 1px 1px #8da2b333;transition:color .12s,transform .12s}.star-widget button.selected{color:#f4b529;text-shadow:0 3px 5px #bd862f40}.star-widget button:hover{transform:scale(1.1)}.star-widget button:focus-visible{outline:3px solid #2786d7;outline-offset:1px}.rating-value{margin-left:8px;font-size:15px;font-weight:800;color:#36546f}.review-result{white-space:pre-wrap}
 @media(max-width:520px){.star-widget button{font-size:34px;padding:3px}.rating-value{width:100%;margin-left:2px}}
-</style></head><body><header class="topbar"><div class="container toprow"><a class="brand" href="#top">CHEORWON <b>AI CLASS</b></a><nav class="toplinks" aria-label="빠른 이동"><a href="#guide">사용 방법</a><a href="#prompts">실습 프롬프트</a><a href="#sources">공식자료</a></nav></div></header><section class="hero" id="top"><div class="container heroin"><div class="eyebrow">CHEORWON GIRLS' HIGH SCHOOL · AI & FUTURE</div><h1>AI로 탐색하는<br><em>나의 미래</em></h1><p>궁금한 것은 직접 질문하고, 답은 확인하고, 미래는 스스로 선택해요. 필요한 실습 프롬프트를 찾아 <strong>버튼 한 번으로 전체 복사</strong>하세요.</p><div class="hero-meta"><span>2026. 10. 21. 수요일</span><span>13:30–15:20 · 휴식 10분 포함</span><span>김유성 강사</span><span>총 27개 프롬프트</span></div><div class="hero-actions"><a class="action" href="#prompts">✨ 실습 바로 시작</a><a class="action alt" href="#guide">사용 방법 보기 ↗</a><a class="action alt" href="#character-studio">🎨 나의 강점 포스터 만들기 ↗</a><a class="action alt" href="https://padlet.com/yu_ssam/cwg" target="_blank" rel="noopener noreferrer">📌 패들렛 스터디게시판 ↗</a></div></div></section><nav class="study-toc" id="study-toc" aria-label="PC 화면 실습 바로가기 목차">
+</style></head><body><header class="topbar"><div class="container toprow"><a class="brand" href="#top">CHEORWON <b>AI CLASS</b></a><nav class="toplinks" aria-label="빠른 이동"><a href="#guide">사용 방법</a><a href="#prompts">실습 프롬프트</a><a href="#sources">공식자료</a></nav></div></header><section class="hero" id="top"><div class="container heroin"><div class="eyebrow">CHEORWON GIRLS' HIGH SCHOOL · AI & FUTURE</div><h1>AI로 탐색하는<br><em>나의 미래</em></h1><p>궁금한 것은 직접 질문하고, 답은 확인하고, 미래는 스스로 선택해요. 필요한 실습 프롬프트를 찾아 <strong>버튼 한 번으로 전체 복사</strong>하세요.</p><div class="hero-meta"><span>2026. 10. 21. 수요일</span><span>13:30–15:20 · 휴식 10분 포함</span><span>김유성 강사</span><span>총 27개 프롬프트</span></div><div class="hero-actions"><a class="action" href="#prompts">✨ 실습 바로 시작</a><a class="action alt" href="#guide">사용 방법 보기 ↗</a><a class="action alt" href="#character-studio">🎨 나의 강점 포스터 만들기 ↗</a><a class="action alt" href="https://padlet.com/yu_ssam/cwg" target="_blank" rel="noopener noreferrer">📌 패들렛 스터디게시판 ↗</a></div></div></section><button id="mobile-toc-toggle" class="mobile-toc-toggle" type="button" aria-label="수업 목차 열기" aria-expanded="false" aria-controls="mobile-toc-panel">☰</button>
+<div id="mobile-toc-scrim" class="mobile-toc-scrim" aria-hidden="true"></div>
+<nav id="mobile-toc-panel" class="mobile-toc-panel" aria-label="모바일과 태블릿 수업 목차" aria-hidden="true" inert>
+ <div class="mobile-toc-header"><span>☰ 수업 목차</span><button class="mobile-toc-close" type="button" aria-label="목차 닫기">×</button></div>
+ <div class="mobile-toc-list" id="mobile-toc-list"></div>
+</nav>
+<nav class="study-toc" id="study-toc" aria-label="PC 화면 실습 바로가기 목차">
   <div class="study-toc-title">☰ 수업 목차</div>
   <a href="#top" data-target="top">🏠 처음으로</a>
   <a href="#guide" data-target="guide">📖 사용 방법</a>
@@ -263,6 +288,50 @@ update();
  });
  button.addEventListener('click',async()=>{const text=output.textContent;try{if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);}else{const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();if(!ok)throw new Error('copy unavailable');}button.textContent='✓ 복사완료';button.classList.add('done');status.textContent='복사완료! 원하는 곳에 붙여넣어 보세요.';}catch(e){status.textContent='자동 복사가 지원되지 않는 환경입니다. 문장을 드래그해 직접 복사해 주세요.';}});
  update();
+})();
+</script>
+<script>
+(function(){
+ const toggle=document.getElementById('mobile-toc-toggle');
+ const panel=document.getElementById('mobile-toc-panel');
+ const scrim=document.getElementById('mobile-toc-scrim');
+ const list=document.getElementById('mobile-toc-list');
+ const original=document.getElementById('study-toc');
+ if(!toggle||!panel||!scrim||!original)return;
+ original.querySelectorAll('a[data-target]').forEach(a=>{const clone=a.cloneNode(true);clone.removeAttribute('aria-current');clone.classList.remove('active');list.appendChild(clone)});
+ let lastFocused=null;
+ function setOpen(open,restoreFocus=true){
+  if(open)lastFocused=document.activeElement;
+  panel.classList.toggle('open',open);scrim.classList.toggle('open',open);
+  document.body.classList.toggle('mobile-toc-open',open);
+  toggle.setAttribute('aria-expanded',String(open));
+  toggle.setAttribute('aria-label',open?'수업 목차 닫기':'수업 목차 열기');
+  panel.setAttribute('aria-hidden',String(!open));
+  panel.inert=!open;
+  if(open)panel.querySelector('.mobile-toc-close').focus();
+  else if(restoreFocus && lastFocused && document.contains(lastFocused))lastFocused.focus();
+ }
+ toggle.addEventListener('click',()=>setOpen(!panel.classList.contains('open')));
+ panel.querySelector('.mobile-toc-close').addEventListener('click',()=>setOpen(false));
+ scrim.addEventListener('click',()=>setOpen(false));
+ list.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]');if(!a)return;
+  const type=a.dataset.filterTarget;
+  if(type){const btn=document.querySelector('.filter[data-filter="'+type+'"]');if(btn&&!btn.classList.contains('selected'))btn.click();}
+  setOpen(false,false);
+  const section=document.getElementById(a.getAttribute('href').slice(1));
+  if(section){e.preventDefault();section.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});history.replaceState(null,'',a.getAttribute('href'));}
+ });
+ document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&panel.classList.contains('open'))setOpen(false);
+  if(e.key==='Tab'&&panel.classList.contains('open')){
+   const els=[...panel.querySelectorAll('button,a[href]')].filter(el=>el.getClientRects().length);
+   if(!els.length)return;
+   if(e.shiftKey&&document.activeElement===els[0]){e.preventDefault();els[els.length-1].focus()}
+   else if(!e.shiftKey&&document.activeElement===els[els.length-1]){e.preventDefault();els[0].focus()}
+  }
+ });
+ window.addEventListener('resize',()=>{if(window.innerWidth>=1100&&panel.classList.contains('open'))setOpen(false,false)});
 })();
 </script>
 </body></html>
